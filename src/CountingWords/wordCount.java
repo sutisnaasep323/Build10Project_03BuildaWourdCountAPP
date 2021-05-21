@@ -60,10 +60,20 @@ public class wordCount extends javax.swing.JFrame {
         exitBtn.setBackground(new java.awt.Color(255, 0, 51));
         exitBtn.setForeground(new java.awt.Color(255, 255, 255));
         exitBtn.setText("Exit");
+        exitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBtnActionPerformed(evt);
+            }
+        });
 
         clearBtn.setBackground(new java.awt.Color(0, 102, 255));
         clearBtn.setForeground(new java.awt.Color(255, 255, 255));
         clearBtn.setText("Clear");
+        clearBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearBtnActionPerformed(evt);
+            }
+        });
 
         titleLabel.setFont(new java.awt.Font("DialogInput", 1, 36)); // NOI18N
         titleLabel.setText("Word Count Tool");
@@ -127,6 +137,15 @@ public class wordCount extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitBtnActionPerformed
+
+    private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
+        totalCountTextField.setText("");
+        wrdTextArea.setText("");
+    }//GEN-LAST:event_clearBtnActionPerformed
 
     /**
      * @param args the command line arguments
