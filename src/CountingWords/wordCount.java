@@ -52,6 +52,11 @@ public class wordCount extends javax.swing.JFrame {
         wrdButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         wrdButton.setForeground(new java.awt.Color(255, 255, 255));
         wrdButton.setText("Count Your Words");
+        wrdButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wrdButtonActionPerformed(evt);
+            }
+        });
 
         wrdTextArea.setColumns(20);
         wrdTextArea.setRows(5);
@@ -146,6 +151,17 @@ public class wordCount extends javax.swing.JFrame {
         totalCountTextField.setText("");
         wrdTextArea.setText("");
     }//GEN-LAST:event_clearBtnActionPerformed
+
+    private void wrdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wrdButtonActionPerformed
+        String sentence = wrdTextArea.getText();
+        
+        int i = 0, word = 1;
+        for (i = 0; i < sentence.length();i++){
+            if (sentence.charAt(i) == ' ');
+           word++;
+        }
+        totalCountTextField.setText(" " + word);
+    }//GEN-LAST:event_wrdButtonActionPerformed
 
     /**
      * @param args the command line arguments
